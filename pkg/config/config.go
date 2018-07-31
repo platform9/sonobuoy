@@ -30,7 +30,7 @@ const (
 	// DefaultNamespace is the namespace where the master and plugin workers will run (but not necessarily the pods created by the plugin workers).
 	DefaultNamespace = "heptio-sonobuoy"
 	// DefaultKubeConformanceImage is the URL of the docker image to run for the kube conformance tests.
-	DefaultKubeConformanceImage = "gcr.io/heptio-images/kube-conformance:latest"
+	DefaultKubeConformanceImage = "gcr.io/heptio-images/kube-conformance:v1.10"
 	// DefaultAggregationServerBindPort is the default port for the aggregation server to bind to.
 	DefaultAggregationServerBindPort = 8080
 	// DefaultAggregationServerBindAddress is the default address for the aggregation server to bind to.
@@ -259,8 +259,8 @@ func New() *Config {
 	}
 
 	// TODO (timothysc) reference the other consts
-	cfg.WorkerImage = "gcr.io/heptio-images/sonobuoy:latest"
-	cfg.ImagePullPolicy = "Always"
+	cfg.WorkerImage = "gcr.io/heptio-images/sonobuoy:v0.11.3"
+	cfg.ImagePullPolicy = "IfNotPresent"
 
 	return &cfg
 }

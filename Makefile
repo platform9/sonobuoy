@@ -20,8 +20,8 @@ IMAGE = $(REGISTRY)/$(TARGET)
 DIR := ${CURDIR}
 DOCKER ?= docker
 
-GIT_VERSION ?= $(shell git describe --always --dirty)
-IMAGE_VERSION ?= $(shell git describe --always --dirty)
+GIT_VERSION ?= v0.11.3
+IMAGE_VERSION ?= v0.11.3
 IMAGE_BRANCH ?= $(shell git rev-parse --abbrev-ref HEAD | sed 's/\///g')
 GIT_REF = $(shell git rev-parse --short=8 --verify HEAD)
 
